@@ -1,0 +1,268 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e9f0fa 0%, #f5f7fa 100%);
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(135deg, #004ea8 80%, #3578e5 100%);
+  color: #fff;
+  width: 240px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.07);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2.5rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: #fff url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') center/60% no-repeat;
+  border-radius: 50%;
+  border: 2px solid #3578e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.profile span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.sidebar nav a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 12px 0 12px 12px;
+  border-left: 3px solid transparent;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, border-left 0.2s;
+  font-size: 1.05rem;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  color: #ffd700;
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid #ffd700;
+  font-weight: bold;
+}
+
+.logout {
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 2rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.logout:hover {
+  opacity: 1;
+  color: #ffd700;
+}
+
+/* Conteúdo principal */
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 2rem;
+  max-width: 82%;
+  margin: 2.5rem auto;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #004ea8;
+  margin-bottom: 1.2rem;
+}
+
+/* Botões */
+.btn-blue,
+.add-user {
+  background: #004ea8;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-blue:hover,
+.add-user:hover {
+  background: #3578e5;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+thead {
+  background: #f0f3f7;
+}
+
+th, td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  color: #004ea8;
+  font-weight: 600;
+}
+
+.ativo {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+.inativo {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Inputs e filtros */
+.user-list input {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #bfc9d1;
+  background: #f7fafd;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.user-list input:focus {
+  border: 1.5px solid #3578e5;
+  outline: none;
+}
+
+.filters button {
+  margin: 5px 8px 12px 0;
+  background: #e9f0fa;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #004ea8;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.filters button:hover {
+  background: #3578e5;
+  color: #fff;
+}
+
+.user-list ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+ol {
+  padding-left: 22px;
+  margin-top: 12px;
+}
+
+/* Barras e gráficos */
+.bar-group {
+  margin-top: 10px;
+}
+
+.bar {
+  background: #dce3ec;
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.fill {
+  background: #4a90e2;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 1rem;
+    max-width: 100vw;
+  }
+  .sidebar {
+    width: 70px;
+    padding: 1rem 0.5rem;
+  }
+  .sidebar nav a {
+    font-size: 0.95rem;
+    padding-left: 6px;
+  }
+}
+#modalAdicionarImpressora input,
+#modalAdicionarImpressora select {
+  padding: 10px 12px;
+  border: 1px solid #b5c7e6;
+  border-radius: 7px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  margin-bottom: 8px;
+}
+#modalAdicionarImpressora input:focus,
+#modalAdicionarImpressora select:focus {
+  border: 1.5px solid #3578e5;
+}

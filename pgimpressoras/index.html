@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impressoras</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <strong>Escola Estadual</strong><br />
+        <small>Helena Câmara</small>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../pgdasboard/index.html">Dashboard</a></li>
+        <li><a href="../pggestao-usuarios/index.html">Gestão de Usuários</a></li>
+        <li><a href="../pgrelatorios/index.html">Relatórios</a></li>
+        <li><a href="../pgimpressoras/index.html" class="active">Impressoras</a></li>
+        <li><a href="../pgconfiguracoes/index.html">Configurações</a></li>
+      </ul>
+    </nav>
+    <div class="logout">Sair</div>
+  </aside>
+  <section class="container">
+    <div class="header">
+      <h1>Impressoras</h1>
+      <button class="btn-blue" id="btnAdicionarImpressora">+ Adicionar nova impressora</button>
+    </div>
+
+    <!-- Modal de Cadastro de Impressora -->
+    <div id="modalAdicionarImpressora" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:2rem 1.5rem; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18); z-index:9999; min-width:320px; max-width:90vw;">
+      <h3>Nova Impressora</h3>
+      <form id="formAdicionarImpressora">
+        <input type="text" id="nomeImpressora" placeholder="Nome da Impressora" required style="margin-bottom:8px; width:100%;">
+        <input type="text" id="localImpressora" placeholder="Local/Setor" required style="margin-bottom:8px; width:100%;">
+        <input type="text" id="ipImpressora" placeholder="IP" required style="margin-bottom:8px; width:100%;">
+        <select id="statusImpressora" required style="margin-bottom:8px; width:100%;">
+          <option value="">Status</option>
+          <option value="Ativo">Ativo</option>
+          <option value="Inativo">Inativo</option>
+        </select>
+        <button type="submit" class="btn-blue" style="width:100%; margin-bottom:6px;">Salvar</button>
+        <button type="button" id="btnCancelarImpressora" style="width:100%;">Cancelar</button>
+      </form>
+    </div>
+
+    <h3>Cadastro de Impressoras</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome da Impressora</th>
+          <th>Local/Setor</th>
+          <th>IP</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Impressora 1</td>
+          <td>Administração</td>
+          <td>192.168.1.10</td>
+          <td class="ativo">Ativo</td>
+        </tr>
+        <tr>
+          <td>Impressora 2</td>
+          <td>Sala de Aula 301</td>
+          <td>192.168.1.20</td>
+          <td class="inativo">Inativo</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

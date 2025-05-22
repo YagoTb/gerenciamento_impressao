@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Usuários</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="gestao-wrapper">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar"></div>
+        <div>
+          <strong>Escola Estadual</strong><br />
+          <small>Helena Câmara</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../pgdasboard/index.html">Dashboard</a></li>
+          <li><a href="../pggestao-usuarios/index.html" class="active">Gestão de Usuários</a></li>
+          <li><a href="../pgrelatorios/index.html">Relatórios</a></li>
+          <li><a href="../pgimpressoras/">Impressoras</a></li>
+          <li><a href="../pgconfiguracoes/index.html">Configurações</a></li>
+        </ul>
+      </nav>
+      <div class="logout">Sair</div>
+    </aside>
+
+    <main>
+      <div class="top-bar">
+        <h1>Gestão de Usuários</h1>
+      </div>
+
+      <!-- Botão Adicionar Usuário -->
+      <button id="btnAdicionarUsuario" class="add-user">Adicionar Usuário</button>
+
+      <!-- Modal de Cadastro de Usuário (inicialmente oculto) -->
+      <div id="modalAdicionarUsuario" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -30%); background:#fff; padding:20px; border:1px solid #ccc; z-index:1000;">
+        <h3>Novo Usuário</h3>
+        <form id="formAdicionarUsuario">
+          <input type="text" id="nomeUsuario" placeholder="Nome" required>
+          <input type="email" id="emailUsuario" placeholder="E-mail" required>
+          <button type="submit">Salvar</button>
+          <button type="button" id="btnCancelar">Cancelar</button>
+        </form>
+      </div>
+
+      <!-- Lista/Tabela de Usuários -->
+      <table id="tabelaUsuarios" border="1" style="margin-top:20px;">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Novos usuários aparecerão aqui -->
+        </tbody>
+      </table>
+
+      <section class="grid">
+        <div class="card">
+          <h3>Total de impressões no mês</h3>
+          <div class="big-number">1.250</div>
+        </div>
+
+        <div class="card">
+          <h3>Impressões por setor</h3>
+          <div class="bar-group">
+            <label>Professores</label>
+            <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+            <label>Coordenação</label>
+            <div class="bar"><div class="fill" style="width: 40%;"></div></div>
+            <label>Técnicos</label>
+            <div class="bar"><div class="fill" style="width: 50%;"></div></div>
+            <label>Alunos</label>
+            <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+          </div>
+        </div>
+
+        <div class="card user-list">
+          <h3>Gestão de Usuários</h3>
+          <input type="text" placeholder="🔍 Pesquisar..." />
+          <div class="filters">
+            <button>Professores</button>
+            <button>Coordenação</button>
+            <button>Técnicos</button>
+            <button>Alunos</button>
+          </div>
+          <ul>
+            <li>Ana — 3450</li>
+            <li>Pedro — 320</li>
+            <li>Marcos — 170</li>
+            <li>Carta — 50</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Ranking de Usuários</h3>
+          <ol>
+            <li>Matheus — 350</li>
+            <li>Bruno — 347</li>
+            <li>Henrique — 200</li>
+            <li>Fabian — 30</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3>Impressões por mês</h3>
+          <canvas id="monthlyChart" width="300" height="150"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
