@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loginForm) {
       loginForm.addEventListener('submit', function(e) {
         e.preventDefault(); // Impede o envio real do formulário
-        window.location.href = '../pgdasboard/index.html'; // Redireciona para o dashboard
+          if (document.getElementsByName('admin')) {
+        window.location.href = './gerenciador/pgdasboard/index.html'; // Redireciona para o dashboard
+      }else {
+        window.location.href = './usuario/index.html'; // Redireciona para o dashboard
+        }
       });
     }
   });
