@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = './gerenciador/pgdasboard/index.html';
       } else if (opcao === 'user') {
         window.location.href = './usuario/index.html';
+      } else {
+        alert('Selecione um usuário.');
       }
     });
   }
