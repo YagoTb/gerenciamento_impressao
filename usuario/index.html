@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css">
+  <script src="chart.min.js" defer></script>
+  <script src="index.js" defer></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IEE - Impressão Escolar</title>
+</head>
+<body>
+  <!-- Header -->
+  <header class="user-header">
+    <img src="logo-iee.png" alt="Logo IEE" class="logo">
+    <span class="system-name">IEE - Impressão Escolar Estadual</span>
+    <div class="profile-menu">
+      <img src="avatar-user.png" alt="Avatar" class="avatar">
+      <span>Prof. Ana Paula</span>
+      <div class="dropdown">
+        <a href="">Ver perfil</a>
+        <a href="">Alterar senha</a>
+        <a href="">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#" data-target="dashboard" class="active">📊 Painel</a></li>
+        <li><a href="#" data-target="prints">🖨️ Minhas Impressões</a></li>
+        <li><a href="#" data-target="print">📁 Imprimir Arquivo</a></li>
+        <li><a href="#" data-target="reports">🧾 Relatórios Pessoais</a></li>
+        <li><a href="#" data-target="alerts">🔔 Alertas</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <main class="user-dashboard">
+    <!-- Dashboard -->
+    <section id="dashboard" class="active">
+      <h2>Dados Mensais</h2>
+      <div class="kpi-cards">
+        <div class="card blue">Total de Impressões<br> <span>132</span></div>
+        <div class="card gray">Consumo de Papel<br> <span>132 folhas</span></div>
+        <div class="card green">Consumo de Toner<br> <span>42%</span></div>
+        <div class="card orange">Limite Restante<br> <span>68%</span></div>
+      </div>
+
+      <section class="chart-section">
+        <h3>Histórico de Impressões por Semana</h3>
+        <canvas id="userPrintChart"></canvas>
+      </section>
+
+      <section class="alerts-section">
+        <div class="alert-card red">🔔 Você está próximo do seu limite mensal de impressão.</div>
+        <div class="tip-card">📌 Dica: Imprima frente e verso para economizar papel.</div>
+      </section>
+    </section>
+
+    <!-- Minhas Impressões -->
+    <section id="prints">
+      <h2>Minhas Impressões</h2>
+      <!-- Listagem das impressão será gerada via JS -->
+      <p>Você ainda não realizou nenhuma impressão.</p>
+    </section>
+
+    <!-- Imprimir Arquivo -->
+    <section id="print">
+      <h2>Imprimir Arquivo</h2>
+      <form id="print-form">
+        <input type="file" id="file" required><br><br>
+        Quantidade: <input type="number" min="1" value="1" required><br><br>
+        Frente e Verso: <input type="checkbox"><br><br>
+        Preto e Branco: <input type="checkbox"><br><br>
+        Páginas: <input type="text" placeholder="Ex: 1-5,8,10"><br><br>
+        Impressora:
+        <select required>
+          <option value="">Selecione</option>
+          <option value="impressora1">Impressora 1</option>
+          <option value="impressora2">Impressora 2</option>
+        </select><br><br>
+        <button type="submit">Imprimir Agora</button>
+      </form>
+    </section>
+
+    <!-- Relatórios Pessoais -->
+    <section id="reports">
+      <h2>Relatórios Pessoais</h2>
+      <input type="month"><br><br>
+      <input type="text" placeholder="Informe o nome do arquivo"><br><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Arquivo</th>
+            <th>Impressora</th>
+            <th>Número de Páginas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Conteúdo gerado pelo JS -->
+        </tbody>
+      </table>
+      <button>Exportar como CSV</button>
+    </section>
+
+    <!-- Alertas -->
+    <section id="alerts">
+      <h2>Alertas</h2>
+      <p>Você não possui alertas no momento.</p>
+    </section>
+  </main>
+</body>
+</html>

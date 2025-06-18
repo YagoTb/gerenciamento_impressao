@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Imprex</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="logo.png" alt="Logo Imprex" class="logo" />
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" placeholder="Digite seu usuário" required />
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Digite sua senha" required />
+        </div>
+        <div class="input-group">
+          <select name="tipo_usuario" id="tipo_usuario" required>
+            <option value="">Selecione</option>
+            <option value="admin">Admin</option>
+            <option value="user">Usuário</option>
+          </select>
+        </div>
+        <div class="actions">
+          <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
