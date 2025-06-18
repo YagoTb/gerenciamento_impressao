@@ -1,49 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Configurações do Sistema - Gerenciamento de Impressão</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <aside class="sidebar" aria-label="Menu lateral">
-        <div class="profile">
-            <div class="avatar" aria-label="Avatar da escola"></div>
-            <div>
-                <strong>Escola Estadual</strong><br />
-                <small>Helena Câmara</small>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="../pgdasboard/index.html">Dashboard</a></li>
-                <li><a href="../pggestao-usuarios/index.html">Gestão de Usuários</a></li>
-                <li><a href="../pgrelatorios/index.html">Relatórios</a></li>
-                <li><a href="../pgimpressoras/index.html">Impressoras</a></li>
-                <li><a href="../pgconfiguracoes/index.html" class="active">Configurações</a></li>
-            </ul>
-        </nav>
-        <div class="logout">Sair</div>
-    </aside>
-    <main class="configuracoes-container">
-        <header>
-            <h1>Configurações do Sistema</h1>
-        </header>
+<main class="configuracoes-container">
+    <header>
+        <h1>Configurações do Sistema</h1>
+    </header>
 
+    <div class="config-content">
         <!-- Dados da Organização -->
         <section class="config-section">
             <h2>Dados da Organização</h2>
             <form>
-                <p for="org-name">Nome da Instituição:</p>
-                <input type="text" id="org-name" name="org-name" autocomplete="organization">
-                <br>
-                <p for="org-cnpj">CNPJ:</p>
-                <input type="text" id="org-cnpj" name="org-cnpj" autocomplete="off">
-                <br>
-                <p for="org-endereco">Endereço:</p>
-                <input type="text" id="org-endereco" name="org-endereco" autocomplete="street-address">
-                <br>
-                <button type="submit">Salvar Dados</button>
+                <fieldset>
+                    <label for="org-name">Nome da Instituição:</label>
+                    <input type="text" id="org-name" name="org-name" autocomplete="organization">
+
+                    <label for="org-cnpj">CNPJ:</label>
+                    <input type="text" id="org-cnpj" name="org-cnpj" autocomplete="off">
+
+                    <label for="org-endereco">Endereço:</label>
+                    <input type="text" id="org-endereco" name="org-endereco" autocomplete="street-address">
+
+                    <button type="submit">Salvar Dados</button>
+                </fieldset>
             </form>
         </section>
 
@@ -51,51 +27,57 @@
         <section class="config-section">
             <h2>Gestão de Usuários</h2>
             <button type="button" onclick="abrirModalNovoUsuario()">Adicionar Usuário</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Perfil</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="usuarios-lista">
-                    <!-- Lista dinâmica de usuários -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Perfil</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-lista">
+                        <!-- Lista dinâmica de usuários -->
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Gestão de Impressoras -->
         <section class="config-section">
             <h2>Gestão de Impressoras</h2>
             <button type="button" onclick="abrirModalNovaImpressora()">Adicionar Impressora</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Localização</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="impressoras-lista">
-                    <!-- Lista dinâmica de impressoras -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Localização</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="impressoras-lista">
+                        <!-- Lista dinâmica de impressoras -->
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Parâmetros de Controle -->
         <section class="config-section">
             <h2>Parâmetros de Controle</h2>
             <form>
-                <p for="limite-impressoes">Limite de Impressões por Usuário:</p>
-                <input type="number" id="limite-impressoes" name="limite-impressoes" min="1">
-                <br>
-                <p for="alerta-cota">Alerta de Cota (%):</p>
-                <input type="number" id="alerta-cota" name="alerta-cota" min="1" max="100">
+                <fieldset>
+                    <label for="limite-impressoes">Limite de Impressões por Usuário:</label>
+                    <input type="number" id="limite-impressoes" name="limite-impressoes" min="1">
 
-                <button type="submit">Salvar Parâmetros</button>
+                    <label for="alerta-cota">Alerta de Cota (%):</label>
+                    <input type="number" id="alerta-cota" name="alerta-cota" min="1" max="100">
+
+                    <button type="submit">Salvar Parâmetros</button>
+                </fieldset>
             </form>
         </section>
 
@@ -103,13 +85,15 @@
         <section class="config-section">
             <h2>Integrações e Suporte</h2>
             <form>
-                <label for="email-suporte">Email de Suporte:</label>
-                <input type="email" id="email-suporte" name="email-suporte" autocomplete="email">
+                <fieldset>
+                    <label for="email-suporte">Email de Suporte:</label>
+                    <input type="email" id="email-suporte" name="email-suporte" autocomplete="email">
 
-                <label for="integracao-sistema">Integração com outros sistemas:</label>
-                <input type="text" id="integracao-sistema" name="integracao-sistema" placeholder="Ex: Sistema Escolar">
+                    <label for="integracao-sistema">Integração com outros sistemas:</label>
+                    <input type="text" id="integracao-sistema" name="integracao-sistema" placeholder="Ex: Sistema Escolar">
 
-                <button type="submit">Salvar Integrações</button>
+                    <button type="submit">Salvar Integrações</button>
+                </fieldset>
             </form>
         </section>
 
@@ -117,28 +101,19 @@
         <section class="config-section">
             <h2>Preferências Gerais e Segurança</h2>
             <form>
-                <label for="idioma">Idioma:</label>
-                <select id="idioma" name="idioma">
-                    <option value="pt-br">Português (Brasil)</option>
-                    <option value="en">Inglês</option>
-                </select>
+                <fieldset>
+                    <label for="idioma">Idioma:</label>
+                    <select id="idioma" name="idioma">
+                        <option value="pt-br">Português (Brasil)</option>
+                        <option value="en">Inglês</option>
+                    </select>
 
-                <label for="senha-admin">Alterar Senha do Administrador:</label>
-                <input type="password" id="senha-admin" name="senha-admin" autocomplete="new-password">
+                    <label for="senha-admin">Alterar Senha do Administrador:</label>
+                    <input type="password" id="senha-admin" name="senha-admin" autocomplete="new-password">
 
-                <button type="submit">Salvar Preferências</button>
+                    <button type="submit">Salvar Preferências</button>
+                </fieldset>
             </form>
         </section>
-    </main>
-
-    <!-- Modais para adicionar usuário e impressora -->
-    <div id="modal-novo-usuario" class="modal" style="display:none;">
-        <!-- Conteúdo do modal para adicionar usuário -->
     </div>
-    <div id="modal-nova-impressora" class="modal" style="display:none;">
-        <!-- Conteúdo do modal para adicionar impressora -->
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</main>

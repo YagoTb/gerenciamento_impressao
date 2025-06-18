@@ -1,194 +1,63 @@
-/* Reset e base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, #e9f0fa 0%, #f5f7fa 100%);
-    color: #222;
-    min-height: 100vh;
-}
-
-/* Sidebar fixa */
-.sidebar {
-    background: linear-gradient(135deg, #004ea8 80%, #3578e5 100%);
-    color: #fff;
-    width: 240px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 0 12px rgba(0,0,0,0.07);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    z-index: 100;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 2.5rem;
-}
-
-.avatar {
-    width: 48px;
-    height: 48px;
-    background: #fff url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') center/60% no-repeat;
-    border-radius: 50%;
-    border: 2px solid #3578e5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile span {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar nav li {
-    margin-bottom: 10px;
-}
-
-.sidebar nav a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    padding: 12px 0 12px 12px;
-    border-left: 3px solid transparent;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s, border-left 0.2s;
-    font-size: 1.05rem;
-}
-
-.sidebar nav a.active,
-.sidebar nav a:hover {
-    color: #ffd700;
-    background: rgba(255,255,255,0.07);
-    border-left: 3px solid #ffd700;
-    font-weight: bold;
-}
-
-.logout {
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 2rem;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-}
-.logout:hover {
-    opacity: 1;
-    color: #ffd700;
-}
-
-/* Conteúdo principal deslocado pela sidebar fixa */
-main.configuracoes-container {
-    max-width: 1550px;
-    margin: 40px auto 40px 280px; /* margem à esquerda para sidebar */
+.configuracoes-container {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 24px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 32px 36px;
-    min-height: calc(100vh - 80px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 
-/* Títulos e seções */
-h1 {
-    font-size: 2.3rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
+.config-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .config-section {
-    margin-bottom: 36px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e1e4e8;
-}
-
-.config-section:last-child {
-    border-bottom: none;
+    margin-bottom: 16px;
 }
 
 .config-section h2 {
-    font-size: 1.3rem;
-    color: #1a73e8;
-    margin-bottom: 18px;
-    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.2em;
 }
 
-/* Formulários */
-form {
+form fieldset {
+    border: none;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 18px 32px;
+    gap: 16px 24px;
+    align-items: center;
 }
 
-label {
-    flex-basis: 180px;
+form label {
+    min-width: 180px;
     font-weight: 500;
-    margin-bottom: 6px;
-    color: #34495e;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="password"],
-select {
-    flex: 1 1 260px;
-    padding: 8px 12px;
-    border: 1px solid #d1d5db;
+form input, form select {
+    flex: 1 1 220px;
+    padding: 8px;
     border-radius: 6px;
-    font-size: 1rem;
-    background: #f9fafb;
-    margin-bottom: 12px;
-    transition: border-color 0.2s;
+    border: 1px solid #ccc;
 }
 
-input:focus, select:focus {
-    border-color: #1a73e8;
-    outline: none;
-    background: #fff;
+form button {
+    margin-top: 16px;
+    align-self: flex-start;
 }
 
-button[type="submit"], button {
-    background: #1a73e8;
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    padding: 9px 22px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.18s;
+.table-responsive {
+    overflow-x: auto;
 }
 
-button[type="submit"]:hover, button:hover {
-    background: #155ab6;
-}
-
-/* Tabelas */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 14px;
-    background: #f9fafb;
-    border-radius: 6px;
+    margin-top: 12px;
+    background: #fafbfc;
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -198,89 +67,26 @@ th, td {
 }
 
 th {
-    background: #e3eafc;
-    color: #1a73e8;
+    background: #f1f1f1;
     font-weight: 600;
-    border-bottom: 2px solid #d1d5db;
 }
 
-td {
-    border-bottom: 1px solid #ececec;
-    color: #333;
+tr:nth-child(even) {
+    background: #f9f9f9;
 }
 
-tr:last-child td {
-    border-bottom: none;
-}
-
-/* Modal */
-.modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(44, 62, 80, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
-.modal > div {
-    background: #fff;
-    border-radius: 10px;
-    padding: 32px 28px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-    min-width: 320px;
-    max-width: 90vw;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-    background: #f6f8fa;
-}
-::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 4px;
-}
-
-/* Responsividade */
-@media (max-width: 1100px) {
-    main.configuracoes-container {
-        margin-left: 260px;
-        margin-right: 10px;
-        padding: 18px 2vw;
+@media (max-width: 700px) {
+    .configuracoes-container {
+        padding: 8px;
     }
-}
-@media (max-width: 900px) {
-    .sidebar {
-        position: relative;
-        width: 100vw;
-        height: auto;
-        border-radius: 0;
-        flex-direction: row;
-        align-items: center;
-        padding: 1rem 0.5rem;
-    }
-    main.configuracoes-container {
-        margin: 24px 4vw 24px 4vw;
-        padding: 18px 6vw;
-    }
-}
-@media (max-width: 650px) {
-    .sidebar {
+    form fieldset {
         flex-direction: column;
-        align-items: flex-start;
-        width: 100vw;
-        min-width: unset;
-        padding: 1rem 1rem;
-        border-radius: 0;
-        box-shadow: none;
-        position: static;
-        height: auto;
+        gap: 8px;
     }
-    main.configuracoes-container {
-        margin: 18px 2vw;
-        padding: 10px 2vw;
+    .config-content {
+        gap: 18px;
+    }
+    table, th, td {
+        font-size: 0.97em;
     }
 }
